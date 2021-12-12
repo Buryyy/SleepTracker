@@ -2,7 +2,7 @@
 ## _Track your night sleep._
 
 ###### Powered by:
-[![N|Solid](https://github.com/realm/realm-dotnet/raw/master/logo.png)](https://github.com/realm/realm-dotnet) [![N|Solid](https://autofac.org/img/autofac_logo-type.svg)](https://autofac.org/) 
+[![N|Solid](https://github.com/realm/realm-dotnet/raw/master/logo.png)](https://github.com/realm/realm-dotnet) 
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
@@ -20,6 +20,7 @@ SleepTracker is still unfinished and unusable.
 | Fody (Weaving) | https://github.com/Fody/Fody |
 | Xamarin.CommunityToolkit (Video background) | https://github.com/xamarin/XamarinCommunityToolkit |
 
+[![N|Solid](https://s10.gifyu.com/images/e7d387c3aed5fd90c65152a98c778523.gif)]()
 
 ## License
 
