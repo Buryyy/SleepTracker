@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Name="MainViewPage" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="SleepTracker.Views.MainView">
+    <ContentPage.Content>
+        <Grid Padding="0"  ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <xct:MediaElement  AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" Opacity="0.5"  Volume="0"  Aspect="Fill" AutoPlay="True" IsLooping="True"  x:Name="videoBg" HeightRequest="50" ShowsPlaybackControls="True" Source="ms-appx:///videobg.mp4" />
+            <Image Margin="0,-170,0,-50"  Aspect="AspectFill" Source="bg.png"></Image>
+
+            <StackLayout HorizontalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <Image  WidthRequest="300" TranslationY="80" HeightRequest="130"  Aspect="AspectFill" Source="logo.png"></Image>
+            </StackLayout>
+
+            <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Start" Orientation="Horizontal">
+                <Button  FontFamily="Caviar"   xct:ShadowEffect.Color="Black" xct:ShadowEffect.Radius="5" TextColor="White"  BackgroundColor="{StaticResource ButtonBackgroundColor}" WidthRequest="120" TranslationX="2" TranslationY="200" HeightRequest="40" FontSize="14" FontAttributes="Bold" Text="RECORDS" CornerRadius="50">
+                    <Button.Effects>
+                        <xct:ShadowEffect></xct:ShadowEffect>
+                    </Button.Effects>
+                </Button>
+                <Button  FontFamily="Caviar"   xct:ShadowEffect.Color="Black" TextColor="White"  BackgroundColor="{StaticResource ButtonBackgroundColor}" WidthRequest="120" TranslationX="20" TranslationY="205" HeightRequest="40" FontSize="14" FontAttributes="Bold" Text="PLACEHOLDER" CornerRadius="50"></Button>
+            </StackLayout>
+
+            <Frame WidthRequest="340" HeightRequest="220" CornerRadius="10" xct:ShadowEffect.Color="black" xct:ShadowEffect.Radius="10" BackgroundColor="{StaticResource CommonTextColor}"  VerticalOptions="Center" TranslationY="0"
+               HorizontalOptions="CenterAndExpand">
+                <StackLayout Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+                    <Label FontFamily="Caviar_Bold" HorizontalOptions="Center" TextColor="{StaticResource MainBackgroundColor}" FontSize="22" FontAttributes="Bold" Text="Recent recordings"></Label>
+
+                    <!-- RECORDS LISTVIEW -->
+                    <CollectionView TranslationX="0"  ItemsSource="{Binding RecordsCollection, Mode=TwoWay}  ">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Horizontal"
+                        Span="1" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame  CornerRadius="1" BorderColor="{StaticResource CommonTextColor}" BackgroundColor="{StaticResource CommonTextColor}" xct:ShadowEffect.Color="Black" xct:ShadowEffect.Radius="10">
+                                    <StackLayout Spacing="0.3" HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Label  FontFamily="Caviar"  TextColor="{StaticResource AccentTextColor}" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" Text="{Binding RecordName}"></Label>
+                                        <Label FontFamily="Caviar"  Text="{Binding RecordTimestamp}" TextColor="{StaticResource AccentTextColor}" FontSize="14"></Label>
+                                        <Frame Margin="20,20,20,20" CornerRadius="50">
+                                            <Image WidthRequest="60" HeightRequest="60" Source="{Binding PlayIcon, Mode=OneWay}">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                    NumberOfTapsRequired="1"
+                                                    Command="{Binding Path=BindingContext.PlayAudioCommand, Source={x:Reference MainViewPage} }" CommandParameter="{Binding .}">
+                                                    </TapGestureRecognizer>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </Frame>
+                                    </StackLayout>
+                                    <Frame.Effects>
+                                        <xct:ShadowEffect></xct:ShadowEffect>
+                                    </Frame.Effects>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+
+                <Frame.Effects>
+                    <xct:ShadowEffect>
+                    </xct:ShadowEffect>
+                </Frame.Effects>
+            </Frame>
+
+            <!-- END SECTION -->
+            <StackLayout VerticalOptions="End" HorizontalOptions="CenterAndExpand"  AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <Button  FontFamily="Caviar"  Command="{Binding StartRecordCommand}" xct:ShadowEffect.Color="Black" TextColor="{StaticResource ButtonTextColor}" Margin="0,0,0,15" Text="[add_img+changefont] Record" CornerRadius="50" WidthRequest="300" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
