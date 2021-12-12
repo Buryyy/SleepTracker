@@ -14,11 +14,11 @@ SleepTracker is still unfinished and unusable.
 
 | Plugin/Lib | URL |
 | ------ | ------ |
-| AppCenter (Analytics, Crashes) | [https://appcenter.ms/apps][PlDb] |
-| AutoFac (IOC) | [https://autofac.org/][PlGd] | 
-| Realm (Local persistence) | [https://realm.io/][PlGd] |
-| Fody (Weaving) | [https://github.com/Fody/Fody][PlOd] |
-| Xamarin.CommunityToolkit (Video background) | [https://github.com/xamarin/XamarinCommunityToolkit][PlMe] |
+| AppCenter (Analytics, Crashes) | https://appcenter.ms/apps |
+| AutoFac (IOC) | https://autofac.org/ | 
+| Realm (Local persistence) | https://realm.io/ |
+| Fody (Weaving) | https://github.com/Fody/Fody |
+| Xamarin.CommunityToolkit (Video background) | https://github.com/xamarin/XamarinCommunityToolkit |
 
 
 ## License
